@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iran Infrastructure Damage Map</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main id="home-page" class="home-page">
+      <section class="home-hero">
+        <p class="home-kicker">Geospatial Workspace</p>
+        <h1>Energy Infrastructure Mapping Projects</h1>
+        <p class="home-subtitle">
+          Start from this hub and open focused map views for different datasets and operational questions.
+        </p>
+      </section>
+
+      <section class="project-grid">
+        <a class="project-card" href="/?project=regional-damage">
+          <h2>Regional Infrastructure Damage Map</h2>
+          <p>
+            Full multi-country view of upstream, midstream, downstream, and damage assessment layers.
+          </p>
+          <span>Open project</span>
+        </a>
+
+        <a class="project-card" href="/?project=saudi-ew-pipeline">
+          <h2>Saudi East/West Pipeline Focus</h2>
+          <p>
+            Dedicated view centered on the East/West corridor, pumping stations, and supporting facilities.
+          </p>
+          <span>Open project</span>
+        </a>
+
+        <article class="project-card project-card-muted" aria-label="Future project placeholder">
+          <h2>New Project Slot</h2>
+          <p>Add another mapping project by creating a new data module and linking it from this homepage.</p>
+          <span>Reserved</span>
+        </article>
+      </section>
+    </main>
+
+    <section id="map-app" class="map-app map-app-hidden" aria-label="Map project view">
+      <button id="back-home" class="back-home-btn" type="button">Back to projects</button>
+      <div id="map"></div>
+      <div id="layer-controls" class="layer-controls">
+        <h3>Infrastructure Layers</h3>
+        <div class="layer-group">
+          <h4>Upstream</h4>
+          <label>
+            <input type="checkbox" id="upstream-layer" data-layer="upstream" checked />
+            Oil & Gas Production Fields
+          </label>
+        </div>
+        <div class="layer-group">
+          <h4>Midstream</h4>
+          <label>
+            <input type="checkbox" id="pipelines-layer" data-layer="pipelines" checked />
+            Pipelines
+          </label>
+          <label>
+            <input type="checkbox" id="saudi-ew-pipeline-layer" data-layer="saudi-ew-pipeline" checked />
+            Saudi East/West Pipeline
+          </label>
+          <label>
+            <input type="checkbox" id="storage-layer" data-layer="storage" checked />
+            Storage Facilities
+          </label>
+        </div>
+        <div class="layer-group">
+          <h4>Downstream</h4>
+          <label>
+            <input type="checkbox" id="refineries-layer" data-layer="refineries" checked />
+            Refineries
+          </label>
+          <label>
+            <input type="checkbox" id="terminals-layer" data-layer="terminals" checked />
+            Export Terminals
+          </label>
+        </div>
+        <div class="layer-group">
+          <h4>Damage Assessment</h4>
+          <label>
+            <input type="checkbox" id="damage-layer" data-layer="damage" checked />
+            Confirmed Damage Sites
+          </label>
+        </div>
+        <div class="layer-group">
+          <h4>Display</h4>
+          <label>
+            <input type="checkbox" id="labels-layer" data-layer="labels" />
+            Show Labels
+          </label>
+        </div>
+      </div>
+    </section>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
