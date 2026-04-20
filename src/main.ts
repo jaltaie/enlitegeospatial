@@ -3,7 +3,9 @@ import './style.css'
 import { manualData } from './data/manualData'
 import { saudiEastWestPipelineData, type SaudiPipelineFeature } from './data/saudiEastWestPipeline'
 
-// Prefer VITE_MAPBOX_TOKEN from .env.local, but keep a placeholder as a visible fallback.
+// TO DO: email mapbox for tokenm or get online? See if Manaar has Mapbox account or if we can use MapLibre instead with open data sources. 
+// Mapbox is just easier to get up and running for now, but we can switch to open source if needed.
+
 const configuredToken = (import.meta.env.VITE_MAPBOX_TOKEN ?? 'YOUR_MAPBOX_TOKEN_HERE').trim()
 const hasValidMapboxToken = configuredToken.length > 0 && configuredToken !== 'YOUR_MAPBOX_TOKEN_HERE'
 
@@ -119,8 +121,8 @@ function withShortName(feature: InfrastructureFeature): InfrastructureFeature {
   }
 }
 
-// Expanded demonstration dataset across Iran.
-// Replace with your verified conflict dataset for production use.
+// Just copy this data type throughout 
+// Replace with Manaar Postgre or wheatever RDBMS
 const sampleData: InfrastructureFeature[] = [
   {
     type: 'Feature',
@@ -792,7 +794,7 @@ const sampleData: InfrastructureFeature[] = [
   }
 ]
 
-// Regional damage entries for surrounding countries (demonstration records).
+// Regional damage entries - see if Kinan or Waseem have existing reocrds to integrate
 const regionalDamageData: InfrastructureFeature[] = [
   {
     type: 'Feature',

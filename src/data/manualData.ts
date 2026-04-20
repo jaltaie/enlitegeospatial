@@ -19,7 +19,7 @@ export type ManualFeature = {
   }
 }
 
-// Add your own records here.
+// Add custom record here kind of like Java array objects OOO I don't know if it will work
 // Example:
 // {
 //   type: 'Feature',
@@ -37,22 +37,10 @@ export type ManualFeature = {
 // }
 
 
+
+
 export const manualData: ManualFeature[] = [
 
-
-  {
-    type: 'Feature',
-    geometry: { type: 'Point', coordinates: [51.389, 35.6892] },
-    properties: {
-      name: 'Yanbu Placeholder',
-      type: 'Damage Site',
-      category: 'damage',
-      damage_status: 'confirmed',
-      country: 'Iran',
-      event_date: '2026-04-19',
-      confidence: 'high',
-      notes: '700 kbpd damage'
-    }
 
 
   {
